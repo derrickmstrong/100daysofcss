@@ -1,0 +1,139 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #3FAF82;
+  color: #fff;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.container {
+    cursor: pointer;
+}
+
+.strip-one, .strip-two, .strip-three {
+    width: 75px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 3px;
+    margin: 14px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.2);
+}
+
+.strip-one {
+    animation: strip-one-rev 0.75s forwards;
+}
+
+.strip-two {
+    animation: strip-two-rev 0.75s forwards;
+}
+
+.strip-three {
+    animation: strip-three-rev 0.75s forwards;
+}
+
+.no-animation {
+    animation: none !important;
+}
+
+.container.active .strip-one {
+    animation: strip-one 0.75s forwards;
+}
+
+.container.active .strip-two {
+    animation: strip-two 0.75s forwards;
+}
+
+.container.active .strip-three {
+    animation: strip-three 0.75s forwards;
+}
+
+@keyframes strip-one {
+    0% {
+        transform: none;
+    }
+    50% {
+        transform: translateY(23px);
+    }
+    100% {
+        transform: translateY(23px) rotate(45deg);
+    }
+}
+
+@keyframes strip-two {
+  0% {
+    transform: none;
+  }
+  50% { 
+    transform: scaleX(0);
+  }
+  100% {
+   transform: scaleX(0);
+  }
+}
+
+@keyframes strip-three {
+  0% {
+    transform: none;
+  }
+  50% {
+    transform: translateY(-23px);
+  }
+  100% {
+    transform: translateY(-23px) rotate(135deg);
+  }
+}
+
+@keyframes strip-one-rev {
+  0% {
+    transform: translateY(23px) rotate(45deg);
+  }
+  50% { 
+    transform: translateY(23px);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@keyframes strip-two-rev {
+  0% {
+    transform: scaleX(0);
+  }
+  50% { 
+    transform: scaleX(0);
+  }
+  100% {
+   transform: scaleX(1);
+  }
+}
+
+@keyframes strip-three-rev {
+  0% {
+    transform: translateY(-23px) rotate(135deg);
+  }
+  50% {
+    transform: translateY(-23px);
+  }
+  100% {
+    transform: none;
+  }
+}
